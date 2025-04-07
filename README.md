@@ -17,7 +17,7 @@ Sections like: Who Am I, What Drives Me, Skills and Fun Fact.
 
 3.education.html – Education Details about my academic background .
 
-projects.html – Projects Lists major projects I’ve worked on. Each project includes a short description.
+4.projects.html – Projects Lists major projects I’ve worked on. Each project includes a short description.
 
 5.contact.html – Contact Displays email, phone number, and social media links (GitHub, LinkedIn,Instagram).
 
