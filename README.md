@@ -3,7 +3,7 @@ Phanisri's Portfolio Website – README This is a personal portfolio website cre
 
 🌐 Website Structure The website is divided into the following main HTML pages:
 
-1.index.html – Home Page Features a welcome section with a  a plain background color.IT has view resume button to viiew my resume and contact button which directs to contact page.
+1.index.html – Home Page Features a welcome section with a  a plain background color.It has view resume button to viiew my resume and contact button which directs to contact page.
 
 Contains navigation links to other pages.
 
