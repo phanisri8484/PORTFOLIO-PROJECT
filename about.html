@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Yemineni Phanisri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color:lightblue
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: darkslategray;
+    }
+
+    nav {
+      background-color: rgba(47, 79, 79, 0.9);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      color: orange;
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about-header {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: mediumvioletred;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .slides-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .slide {
+      background-color: rgba(255, 255, 255, 0.92);
+      border-left: 6px solid mediumslateblue;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .slide:hover {
+      transform: scale(1.02);
+    }
+
+    .slide h3 {
+      margin-bottom: 10px;
+      color: darkslategray;
+    }
+
+    .slide p {
+      color: dimgray;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .about-header {
+        font-size: 32px;
+      }
+
+      .slide h3 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Yemineni Phanisri</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-section">
+    <h1 class="about-header">About Me</h1>
+
+    <div class="slides-container">
+      <div class="slide">
+        <h3>Who Am I?</h3>
+        <p>I’m Phanisri, a future-ready developer driven by a love for coding, technology, and continuous learning in the ever-evolving world of software.A passionate and dedicated first-year BTech student in Computer Science Engineering. I'm excited to explore the world of computer science and learn about the latest technologies and trends. I'm currently learning programming languages like Java and Python, and I'm looking forward to building projects and gaining hands-on experience.I attended ACM ML workshop and have hands on experience on basic ML</p>
+      </div>
+
+      <div class="slide">
+        <h3>What Drives Me?</h3>
+        <p>Curiosity and the desire to learn skills for solving society issues with technology. I'm especially into AI, web development, and real-world coding impacts.</p>
+      </div>
+
+      <div class="slide">
+        <h3>My Skills</h3>
+        <p>HTML, CSS, Python(also libraries like numpy and pandas), Java. Familiar with GitHub. Exploring full-stack and ML projects.</p>
+      </div>
+
+      
+      <div class="slide">
+        <h3>Fun Fact</h3>
+        <p>I enjoy debugging—it feels like solving puzzles! Group work helps me grow a lot too.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

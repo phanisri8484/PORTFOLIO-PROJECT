@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Education | Phanisri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {background-color:lightyellow;
+           background-size: cover;
+      color: white;
+    }
+
+    nav {
+      background-color: maroon;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: cyan;
+    }
+
+    .education-section {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 80px auto;
+      border-radius: 15px;
+    }
+
+    .education-header {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 40px;
+      color: cyan;
+    }
+
+    .edu-item {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-left: 6px solid cyan;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .edu-item h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .edu-item p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: lightgray;
+    }
+
+    .edu-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .edu-item.active {
+      background-color: lightblue;
+      border-left-color: white;
+      box-shadow: 0 0 15px cyan;
+      color: black;
+    }
+
+    @media (max-width: 600px) {
+      .education-header {
+        font-size: 32px;
+      }
+
+      .edu-item h3 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Phanisri</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="education-section">
+    <h1 class="education-header">My Education</h1>
+
+    <div class="edu-item" onclick="highlight(this)">
+      <h3>B.Tech in Computer Science & Engineering</h3>
+      <p>Amrita Vishwa Vidyapeetham, Amritapuri<br>
+        Expected Graduation: 2028<br>
+        CGPA: 8.45 (Current)</p>
+    </div>
+
+    <div class="edu-item" onclick="highlight(this)">
+      <h3>Intermediate (MPC Stream)</h3>
+      <p>Sarada educational institution, Vijayawada<br>
+        Year: 2022-2024<br>
+        Percentage: 95.4%</p>
+    </div>
+
+    <div class="edu-item" onclick="highlight(this)">
+      <h3>Schooling (SSC)</h3>
+      <p>Viveka High School, Andhra Pradesh<br>
+        Year: 2022<br>
+        GPA: 98.6%</p>
+    </div>
+  </section>
+
+  <script>
+    function highlight(selected) {
+      const allItems = document.querySelectorAll('.edu-item');
+      allItems.forEach(item => item.classList.remove('active'));
+      selected.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

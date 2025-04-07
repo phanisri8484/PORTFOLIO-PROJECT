@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Phanisri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      
+      background-size: cover;
+      color: black;
+    }
+
+    nav {
+      background-color: black;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: orange;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 36px;
+      color: blue;
+      text-shadow: 1px 1px 3px gray;
+      margin-bottom: 10px;
+    }
+
+    .projects-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-box {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px lightgray;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s ease;
+    }
+
+    .project-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px gray;
+    }
+
+    .project-box h3 {
+      color: navy;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .project-box p {
+      font-size: 0.95rem;
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    .project-box a {
+      margin-top: auto;
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+    }
+
+    .project-box a:hover {
+      color: mediumseagreen;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Portfolio</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h1>My Projects</h1>
+
+  <div class="projects-wrapper">
+    <div class="project-box">
+     
+      <img src="https://www.electroniclinic.com/wp-content/uploads/2020/07/ESP32-CAM-Connection-with-Arduino-Circuit-Diagram.jpg" alt="Project 2">
+      <p> EEE Project - <a href="https://docs.google.com/document/d/1g7R2u4tmJmLYQcraelU_wNjnFmHXl-0k/edit?usp=sharing&ouid=118199999496133956328&rtpof=true&sd=true">View project</a></p>
+    </div>
+
+    
+
+    <div class="project-box">
+      <h3>🌐 Responsive Portfolio Website</h3>
+      <p>A clean and fully responsive personal portfolio built using only HTML and CSS, designed to showcase skills and projects.</p>
+      <a href="#">View on GitHub →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
