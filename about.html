@@ -1,179 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About | Yemineni Phanisri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Yemineni Phanisri</title>
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: lightblue;
-      color: darkslategray;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0F2F7; /* Light pastel blue */
+            color: #2D3748; /* Dark gray text */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
 
-    nav {
-      background-color: rgba(47, 79, 79, 0.9);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-    }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Light pastel background */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7d9eb; /* Soft blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8ecae6; /* Slightly darker blue on hover */
+        }
 
-    nav .logo {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
+        /* Header/Navigation Bar */
+        header {
+            background-color: #A7D9EB; /* Soft blue */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* Header is fixed at the top */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure it spans full width */
+            z-index: 100;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-    }
+        header .logo {
+            font-size: 1.8rem; /* Slightly larger logo */
+            font-weight: 800; /* Extra bold */
+            color: #4A5568; /* Darker text */
+        }
 
-    nav ul li a:hover {
-      color: orange;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem; /* Increased spacing */
+        }
 
-    .about-section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      flex: 1;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #4A5568; /* Darker text */
+            font-weight: 600; /* Semi-bold */
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
 
-    .about-header {
-      text-align: center;
-      font-size: 40px;
-      margin-bottom: 30px;
-      color: mediumvioletred;
-      text-shadow: 1px 1px 3px black;
-    }
+        nav ul li a:hover {
+            color: #FFB6C1; /* Pastel pink on hover */
+            transform: translateY(-2px); /* Subtle lift */
+        }
 
-    .slides-container {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+        /* Spacer div to push content below fixed header - This is no longer needed in HTML */
+        /* as the main content area will handle its own top padding/margin */
 
-    .slide {
-      background-color: rgba(255, 255, 255, 0.92);
-      border-left: 6px solid mediumslateblue;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
+        /* Main content area, structured similar to .education-section */
+        .main-content-area {
+            flex-grow: 1;
+            padding: 4rem 1rem; /* Consistent padding with education-section */
+            margin-top: 80px; /* Explicitly push content below fixed header */
+            opacity: 0; /* For fade-in animation on the whole content area */
+            animation: fadeIn 1s ease-out forwards 0.5s;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem; /* Gap between the main content wrapper and CTA section */
+            max-width: 80rem; /* Overall max-width for the section */
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    .slide:hover {
-      transform: scale(1.02);
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .slide h3 {
-      margin-bottom: 10px;
-      color: darkslategray;
-    }
+        /* Inner content wrapper, similar to .education-content-wrapper */
+        .about-content-wrapper {
+            max-width: 64rem; /* Consistent max-width with education-content-wrapper */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Light card background with opacity */
+            padding: 2.5rem; /* Consistent padding */
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+        }
 
-    .slide p {
-      color: dimgray;
-      line-height: 1.6;
-    }
+        .section-heading {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 3rem; /* Consistent margin-bottom */
+            color: #333333; /* Dark text for headings */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(47, 79, 79, 0.9);
-      color: white;
-    }
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem; /* Increased spacing */
+        }
 
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
+        .slide {
+            background-color: rgba(255, 255, 255, 0.8); /* Light card background with opacity */
+            padding: 2.5rem; /* Increased padding */
+            border-left: 0.5rem solid;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* For animations */
+            opacity: 0; /* Hidden initially for JS animation */
+            transform: translateY(20px); /* Slightly down initially */
+        }
 
-    footer a:hover {
-      color: orange;
-    }
+        .slide.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
 
-    @media (max-width: 600px) {
-      .about-header {
-        font-size: 32px;
-      }
+        .slide:hover {
+            transform: translateY(-5px) scale(1.01); /* Lift and slight scale */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+        }
 
-      .slide h3 {
-        font-size: 20px;
-      }
-      
-      nav {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
+        /* Specific border colors for slides (pastel accents) */
+        .slide:nth-child(1) { border-left-color: #8ecae6; } /* Soft Blue */
+        .slide:nth-child(2) { border-left-color: #A5D0A5; } /* Soft Green */
+        .slide:nth-child(3) { border-left-color: #FFDAB9; } /* Soft Peach */
+        .slide:nth-child(4) { border-left-color: #FFB6C1; } /* Soft Pink */
+        .slide:nth-child(5) { border-left-color: #CCCCFF; } /* Lavender (new pastel color) */
+
+
+        .slide h3 {
+            margin-bottom: 1rem;
+            font-size: 1.6rem; /* Larger heading */
+            font-weight: 700; /* Bold */
+            color: #4A5568; /* Darker text for headings */
+        }
+
+        .slide p {
+            color: #616E82; /* Slightly lighter dark gray text */
+            line-height: 1.7; /* Increased line height */
+        }
+
+        /* Skill Badges (for the "My Skills" slide) */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem; /* Gap between badges */
+            margin-top: 1rem;
+        }
+
+        .skill-badge {
+            background-color: #DDEBF1; /* Lighter pastel background for badge */
+            color: #4A5568; /* Darker text for badge */
+            padding: 0.5rem 1rem;
+            border-radius: 9999px; /* Pill shape */
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background-color: #A7D9EB; /* Soft blue on hover */
+            color: white;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for CTA */
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.2s; /* Delayed fade-in */
+            max-width: 64rem; /* Match width of about-content-wrapper */
+            margin: 0 auto; /* Center the CTA section */
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #333333; /* Dark text */
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            padding: 0.8rem 2.5rem;
+            border-radius: 9999px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-btn.contact {
+            background-color: #FFDAB9; /* Soft peach */
+            color: #1A202C; /* Dark text */
+        }
+
+        .cta-btn.contact:hover {
+            background-color: #FFC999; /* Slightly darker peach */
+            transform: translateY(-3px);
+        }
+
+        .cta-btn.projects {
+            background-color: #C1E1C1; /* Soft green */
+            color: #1A202C; /* Dark text */
+        }
+
+        .cta-btn.projects:hover {
+            background-color: #A5D0A5; /* Slightly darker green */
+            transform: translateY(-3px);
+        }
+
+
+        /* Footer Section */
+        footer {
+            background-color: #DDEBF1; /* Soft gray-blue */
+            color: #4A5568; /* Darker text */
+            padding: 1.5rem;
+            text-align: center;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #8ecae6; /* Pastel blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: #219ebc; /* Deeper blue on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-heading {
+                font-size: 3.5rem;
+            }
+            .slide h3 {
+                font-size: 1.8rem;
+            }
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+                height: auto; /* Allow header to adjust height on smaller screens */
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .main-content-area {
+                margin-top: 100px; /* Adjust for smaller header on mobile if needed */
+            }
+            .section-heading {
+                font-size: 2.2rem;
+                margin-bottom: 2.5rem;
+            }
+            .slide {
+                padding: 1.5rem;
+            }
+            .slide h3 {
+                font-size: 1.3rem;
+            }
+            .slide p {
+                font-size: 0.9rem;
+            }
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">Yemineni Phanisri</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Header/Navigation Bar -->
+    <header id="main-header">
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="about-section">
-    <h1 class="about-header">About Me</h1>
+    <!-- Main content area, acting as the primary container for About section content -->
+    <main class="main-content-area">
+        <div class="about-content-wrapper">
+            <h2 class="section-heading">My Story</h2>
 
-    <div class="slides-container">
-      <div class="slide">
-        <h3>Who Am I?</h3>
-        <p>I'm Phanisri, a future-ready developer driven by a love for coding, technology, and continuous learning in the ever-evolving world of software. A passionate and dedicated first-year BTech student in Computer Science Engineering. I'm excited to explore the world of computer science and learn about the latest technologies and trends. I'm currently learning programming languages like Java and Python, and I'm looking forward to building projects and gaining hands-on experience. I attended ACM ML workshop and have hands on experience on basic ML.</p>
-      </div>
+            <div class="slides-container">
+                <div class="slide">
+                    <h3>Who Am I?</h3>
+                    <p>I’m Phanisri, a future-ready developer driven by a love for coding, technology, and continuous learning in the ever-evolving world of software. A passionate and dedicated first-year BTech student in Computer Science Engineering. I'm excited to explore the world of computer science and learn about the latest technologies and trends. I'm currently learning programming languages like Java and Python, and I'm looking forward to building projects and gaining hands-on experience. I attended ACM ML workshop and have hands-on experience on basic ML.I worked as volunteer in AMRITAVARSHAM'71</p>
+                </div>
 
-      <div class="slide">
-        <h3>What Drives Me?</h3>
-        <p>Curiosity and the desire to learn skills for solving society issues with technology. I'm especially into AI, web development, and real-world coding impacts.</p>
-      </div>
+                <div class="slide">
+                    <h3>What Drives Me?</h3>
+                    <p>Curiosity and the desire to learn skills for solving society issues with technology. I'm especially into AI, web development, and real-world coding impacts.</p>
+                </div>
 
-      <div class="slide">
-        <h3>My Skills</h3>
-        <p>HTML, CSS, Python (also libraries like numpy and pandas), Java. Familiar with GitHub. Exploring full-stack and ML projects.</p>
-      </div>
+                <div class="slide">
+                    <h3>My Core Skills</h3>
+                    <div class="skills-grid">
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">NumPy</span>
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">GitHub</span>
+                        <span class="skill-badge">Basic ML Concepts</span>
+                        <span class="skill-badge">Frontend Development</span>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <h3>Fun Fact & Collaboration</h3>
+                    <p>I enjoy debugging—it feels like solving puzzles! This passion for problem-solving extends to teamwork, where I believe collaboration and diverse perspectives are key to innovative solutions. Group work helps me grow a lot and discover new approaches.</p>
+                </div>
 
-      <div class="slide">
-        <h3>Fun Fact</h3>
-        <p>I enjoy debugging—it feels like solving puzzles! Group work helps me grow a lot too.</p>
-      </div>
-    </div>
-  </section>
-  
-  <footer>
-    <p>© 2025 Yemineni Phanisri | 
-      <a href="about.html">About Me</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
-    </p>
-  </footer>
+                <div class="slide">
+                    <h3>Languages I Know</h3>
+                    <p>Telugu, Hindi, English</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Section, now also styled to match width of the main content wrapper -->
+        <section class="cta-section">
+            <h2>Ready to connect or explore my work?</h2>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-btn contact">Contact Me</a>
+                <a href="projects.html" class="cta-btn projects">View My Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section - Consistent with Home Page -->
+    <footer>
+        <p>© 2025 Yemineni Phanisri | 
+            <a href="about.html">About Me</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript for scroll-reveal animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // element is 10% visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, observerOptions);
+
+            // Observe each slide for animation
+            document.querySelectorAll('.slide').forEach(slide => {
+                observer.observe(slide);
+            });
+
+            // Adjust margin-top for main content area to clear fixed header
+            const adjustMainContentMargin = () => {
+                const header = document.getElementById('main-header');
+                const mainContent = document.querySelector('.main-content-area');
+                if (header && mainContent) {
+                    mainContent.style.marginTop = header.offsetHeight + 'px';
+                }
+            };
+
+            // Adjust on load and resize
+            adjustMainContentMargin();
+            window.addEventListener('resize', adjustMainContentMargin);
+        });
+    </script>
 
 </body>
 </html>
