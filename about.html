@@ -13,11 +13,11 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color:lightblue;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-color: lightblue;
       color: darkslategray;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     nav {
@@ -55,6 +55,7 @@
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+      flex: 1;
     }
 
     .about-header {
@@ -94,6 +95,22 @@
       line-height: 1.6;
     }
 
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(47, 79, 79, 0.9);
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: orange;
+    }
+
     @media (max-width: 600px) {
       .about-header {
         font-size: 32px;
@@ -102,9 +119,13 @@
       .slide h3 {
         font-size: 20px;
       }
-    }
       
-
+      nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,7 +147,7 @@
     <div class="slides-container">
       <div class="slide">
         <h3>Who Am I?</h3>
-        <p>I’m Phanisri, a future-ready developer driven by a love for coding, technology, and continuous learning in the ever-evolving world of software.A passionate and dedicated first-year BTech student in Computer Science Engineering. I'm excited to explore the world of computer science and learn about the latest technologies and trends. I'm currently learning programming languages like Java and Python, and I'm looking forward to building projects and gaining hands-on experience.I attended ACM ML workshop and have hands on experience on basic ML</p>
+        <p>I'm Phanisri, a future-ready developer driven by a love for coding, technology, and continuous learning in the ever-evolving world of software. A passionate and dedicated first-year BTech student in Computer Science Engineering. I'm excited to explore the world of computer science and learn about the latest technologies and trends. I'm currently learning programming languages like Java and Python, and I'm looking forward to building projects and gaining hands-on experience. I attended ACM ML workshop and have hands on experience on basic ML.</p>
       </div>
 
       <div class="slide">
@@ -136,18 +157,18 @@
 
       <div class="slide">
         <h3>My Skills</h3>
-        <p>HTML, CSS, Python(also libraries like numpy and pandas), Java. Familiar with GitHub. Exploring full-stack and ML projects.</p>
+        <p>HTML, CSS, Python (also libraries like numpy and pandas), Java. Familiar with GitHub. Exploring full-stack and ML projects.</p>
       </div>
 
-      
       <div class="slide">
         <h3>Fun Fact</h3>
         <p>I enjoy debugging—it feels like solving puzzles! Group work helps me grow a lot too.</p>
       </div>
     </div>
   </section>
-   <footer>
-    <p class="about-header">© 2025 Yemineni Phanisri | 
+  
+  <footer>
+    <p>© 2025 Yemineni Phanisri | 
       <a href="about.html">About Me</a> |
       <a href="contact.html">Contact</a> |
       <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
