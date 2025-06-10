@@ -1,8 +1,8 @@
 #My Personal Portfolio Website
-Overview
+#Overview
 This is the source code for my personal portfolio website, designed to showcase my skills, projects, and educational background. The website is built with a clean, modern aesthetic and is fully responsive, ensuring a seamless experience across various devices. It features sections dedicated to my story, academic achievements, key projects, and contact information.
 
-Features
+#Features
 Responsive Design: Optimized for desktops, tablets, and mobile devices.
 
 Intuitive Navigation: Easy-to-use navigation bar for quick access to different sections.
@@ -19,7 +19,7 @@ Smooth Scroll-Reveal Animations: Enhances the user experience with subtle animat
 
 Pastel Color Scheme: A modern and pleasing color palette for visual appeal.
 
-Technologies Used
+#Technologies Used
 HTML5: For structuring the web content.
 
 CSS3: For styling and layout, including responsive design.
@@ -28,7 +28,7 @@ JavaScript (ES6+): For interactive elements and scroll-reveal animations.
 
 Google Fonts (Inter): For a clean and professional typography.
 
-Setup and Installation
+#Setup and Installation
 To get a local copy up and running, follow these simple steps:
 
 Clone the repository:
@@ -42,7 +42,7 @@ cd your-portfolio-repo
 Open index.html:
 Simply open the index.html file in your preferred web browser to view the portfolio. The other HTML files (about.html, Education.html, projects.html, contact.html) can be accessed via the navigation links.
 
-Usage
+#Usage
 Navigate through the sections using the header navigation.
 
 Explore "About Me" to learn more about my background, skills, and languages.
@@ -53,11 +53,11 @@ Visit "Projects" to see examples of my work.
 
 Use the "Contact" form to send a message.
 
-Contributing
+#Contributing
 This is a personal portfolio. However, if you have suggestions for improvements or find any issues, feel free to open an issue or submit a pull request.
 
 
-Contact
+#Contact
 Yemineni Phanisri
 Email: phanisri2006yemineni@gmail.com
 Phone: 7680822912
