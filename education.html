@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education | Yemineni Phanisri</title>
-    <!-- Google Fonts: Inter for a clean, modern look -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base styles */
+       
         * {
             margin: 0;
             padding: 0;
@@ -17,36 +17,36 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #E0F2F7; /* Light pastel blue */
-            color: #2D3748; /* Dark gray for text */
+            background-color: #E0F2F7; 
+            color: #2D3748; 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden; 
         }
 
-        /* Custom scrollbar styles */
+        
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Light pastel background */
+            background: #f1f1f1; 
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #a7d9eb; /* Soft blue */
+            background: #a7d9eb; 
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #8ecae6; /* Slightly darker blue on hover */
+            background: #8ecae6; 
         }
 
-        /* Header/Navigation Bar */
+        
         header {
-            background-color: #A7D9EB; /* Soft blue */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #A7D9EB; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -56,38 +56,38 @@
             z-index: 50;
             border-bottom-left-radius: 0.5rem;
             border-bottom-right-radius: 0.5rem;
-            opacity: 1; /* For header fade-in */
+            opacity: 1; 
             animation: fadeInDown 0.8s ease-out forwards;
         }
 
         header .text-2xl {
-            font-size: 1.5rem; /* text-2xl */
+            font-size: 1.5rem; 
             font-weight: bold;
-            color: #4A5568; /* text-gray-700 */
+            color: #4A5568; 
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem; /* space-x-6 */
+            gap: 1.5rem; 
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #4A5568; /* text-gray-700 */
+            color: #4A5568; 
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #FFB6C1; /* pastel pink */
+            color: #FFB6C1; 
         }
 
-        /* Education Section */
+        
         .education-section {
             flex-grow: 1;
-            padding: 4rem 1rem; /* py-16 px-4 */
-            opacity: 0; /* For fade-in animation */
+            padding: 4rem 1rem; 
+            opacity: 0; 
             animation: fadeIn 1s ease-out forwards 0.5s;
         }
 
@@ -97,104 +97,104 @@
         }
 
         .education-section > div {
-            max-width: 64rem; /* max-w-4xl */
+            max-width: 64rem; 
             margin-left: auto;
             margin-right: auto;
-            background-color: rgba(255, 255, 255, 0.8); /* bg-white bg-opacity-80 */
-            padding: 2rem; /* p-8 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 2rem; 
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
         }
 
         .education-section h1 {
             text-align: center;
-            font-size: 2.5rem; /* text-4xl */
-            font-weight: 800; /* font-extrabold */
-            margin-bottom: 3rem; /* mb-12 */
-            color: #333333; /* Darker text */
+            font-size: 2.5rem; 
+            font-weight: 800;
+            margin-bottom: 3rem; 
+            color: #333333; 
         }
 
         .edu-item-container {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem; /* gap-6 */
+            gap: 1.5rem;
         }
 
         .edu-item {
-            background-color: white; /* bg-white */
-            padding: 1.5rem; /* p-6 */
-            border-left: 0.5rem solid; /* border-l-8 */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* transition-all duration-300 ease-in-out */
+            background-color: white; 
+            padding: 1.5rem; 
+            border-left: 0.5rem solid; 
+            border-radius: 0.5rem; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
             cursor: pointer;
         }
 
         .edu-item:hover {
-            transform: translateY(-0.1rem); /* hover:scale-[1.01] */
-            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15); /* hover:shadow-xl */
+            transform: translateY(-0.1rem); 
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15); 
         }
         
         .edu-item.active {
-            background-color: #FFB6C1; /* active:bg-[#FFB6C1] - pastel pink */
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15); /* active:shadow-2xl */
-            transform: translateY(-0.25rem); /* active:scale-[1.01] */
+            background-color: #FFB6C1; 
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-0.25rem); 
         }
 
         /* Specific border colors for education items */
-        .edu-item:nth-child(1) { border-left-color: #8ecae6; } /* Pastel blue */
-        .edu-item:nth-child(2) { border-left-color: #A5D0A5; } /* Pastel green */
-        .edu-item:nth-child(3) { border-left-color: #FFDAB9; } /* Pastel peach */
+        .edu-item:nth-child(1) { border-left-color: #8ecae6; } 
+        .edu-item:nth-child(2) { border-left-color: #A5D0A5; } 
+        .edu-item:nth-child(3) { border-left-color: #FFDAB9; } 
         
         .edu-item h3 {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 600; /* font-semibold */
-            color: #4A5568; /* text-gray-700 */
-            margin-bottom: 0.5rem; /* mb-2 */
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4A5568; 
+            margin-bottom: 0.5rem; 
         }
 
         .edu-item p {
-            color: #4A5568; /* text-gray-600 */
-            line-height: 1.625; /* leading-relaxed */
+            color: #4A5568; 
+            line-height: 1.625; 
         }
 
-        /* Footer Section */
+        
         footer {
-            background-color: #DDEBF1; /* Soft gray-blue */
-            color: #4A5568; /* text-gray-700 */
-            padding: 1.5rem; /* p-6 */
+            background-color: #DDEBF1; 
+            color: #4A5568; 
+            padding: 1.5rem; 
             text-align: center;
             border-top-left-radius: 0.5rem;
             border-top-right-radius: 0.5rem;
-            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-inner */
+            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
         }
 
         footer p {
-            font-size: 1rem; /* text-md */
+            font-size: 1rem; 
         }
 
         footer a {
-            color: #8ecae6; /* Pastel blue */
+            color: #8ecae6; 
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
         }
 
         footer a:hover {
-            color: #219ebc; /* Darker blue on hover */
+            color: #219ebc; 
         }
 
-        /* Responsive adjustments */
-        @media (min-width: 768px) { /* md breakpoint */
+       
+        @media (min-width: 768px) { 
             .education-section h1 {
-                font-size: 3rem; /* md:text-5xl */
+                font-size: 3rem; 
             }
             .edu-item h3 {
-                font-size: 1.25rem; /* md:text-xl */
+                font-size: 1.25rem; 
             }
         }
 
-        @media (max-width: 640px) { /* Small screens / Mobile */
+        @media (max-width: 640px) {
             header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -224,7 +224,7 @@
 </head>
 <body>
 
-    <!-- Header/Navigation Bar - Consistent with Home and About Pages -->
+    
     <header>
         <div class="text-2xl">My Portfolio</div>
         <nav>
@@ -238,13 +238,12 @@
         </nav>
     </header>
 
-    <!-- Education Section -->
     <section class="education-section">
         <div>
             <h1>My Education</h1>
 
             <div class="edu-item-container">
-                <!-- B.Tech Item -->
+                
                 <div class="edu-item" onclick="highlight(this)">
                     <h3>B.Tech in Computer Science & Engineering</h3>
                     <p>
@@ -254,7 +253,7 @@
                     </p>
                 </div>
 
-                <!-- Intermediate Item -->
+                
                 <div class="edu-item" onclick="highlight(this)">
                     <h3>Intermediate (MPC Stream)</h3>
                     <p>
@@ -264,7 +263,7 @@
                     </p>
                 </div>
 
-                <!-- Schooling Item -->
+                
                 <div class="edu-item" onclick="highlight(this)">
                     <h3>Schooling (SSC)</h3>
                     <p>
@@ -277,27 +276,27 @@
         </div>
     </section>
 
-    <!-- JavaScript for highlighting -->
+    
     <script>
         function highlight(selected) {
             // Remove 'active' class from all items and reset their background/shadow
             const allItems = document.querySelectorAll('.edu-item');
             allItems.forEach(item => {
                 item.classList.remove('active');
-                item.style.backgroundColor = 'white'; /* Reset to default */
-                item.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'; /* Reset to default */
-                item.style.transform = 'translateY(0)'; /* Reset transform */
+                item.style.backgroundColor = 'white'; 
+                item.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'; 
+                item.style.transform = 'translateY(0)'; 
             });
 
             // Add 'active' class and specific styling to the selected item
             selected.classList.add('active');
-            selected.style.backgroundColor = '#FFB6C1'; /* Apply pastel pink for active state */
-            selected.style.boxShadow = '0 15px 20px rgba(0, 0, 0, 0.15)'; /* Enhanced shadow for active */
-            selected.style.transform = 'translateY(-0.25rem)'; /* Slight lift for active */
+            selected.style.backgroundColor = '#FFB6C1'; 
+            selected.style.boxShadow = '0 15px 20px rgba(0, 0, 0, 0.15)'; 
+            selected.style.transform = 'translateY(-0.25rem)';
         }
     </script>
 
-    <!-- Footer Section - Consistent with Home and About Pages -->
+   
     <footer>
         <p>© 2025 Yemineni Phanisri | 
             <a href="about.html">About Me</a> |
