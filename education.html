@@ -1,173 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Education | Phanisri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Yemineni Phanisri</title>
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    body {background-color:lightyellow;
-           background-size: cover;
-      color: white;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0F2F7; /* Light pastel blue */
+            color: #2D3748; /* Dark gray for text */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
 
-    nav {
-      background-color: maroon;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Light pastel background */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7d9eb; /* Soft blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8ecae6; /* Slightly darker blue on hover */
+        }
 
-    nav .logo {
-      font-size: 26px;
-      font-weight: bold;
-    }
+        /* Header/Navigation Bar */
+        header {
+            background-color: #A7D9EB; /* Soft blue */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            opacity: 1; /* For header fade-in */
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
+        header .text-2xl {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: bold;
+            color: #4A5568; /* text-gray-700 */
+        }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem; /* space-x-6 */
+        }
 
-    nav ul li a:hover {
-      color: cyan;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #4A5568; /* text-gray-700 */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    .education-section {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 80px auto;
-      border-radius: 15px;
-    }
+        nav ul li a:hover {
+            color: #FFB6C1; /* pastel pink */
+        }
 
-    .education-header {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 40px;
-      color: cyan;
-    }
+        /* Education Section */
+        .education-section {
+            flex-grow: 1;
+            padding: 4rem 1rem; /* py-16 px-4 */
+            opacity: 0; /* For fade-in animation */
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
 
-    .edu-item {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 25px;
-      margin-bottom: 25px;
-      border-left: 6px solid cyan;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-      cursor: pointer;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .edu-item h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: white;
-    }
+        .education-section > div {
+            max-width: 64rem; /* max-w-4xl */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* bg-white bg-opacity-80 */
+            padding: 2rem; /* p-8 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        }
 
-    .edu-item p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: lightgray;
-    }
+        .education-section h1 {
+            text-align: center;
+            font-size: 2.5rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            margin-bottom: 3rem; /* mb-12 */
+            color: #333333; /* Darker text */
+        }
 
-    .edu-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
-    }
+        .edu-item-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* gap-6 */
+        }
 
-    .edu-item.active {
-      background-color: lightblue;
-      border-left-color: white;
-      box-shadow: 0 0 15px cyan;
-      color: black;
-    }
-       footer {
-      background: maroon;
-      color: black;
-      text-align: center;
-      padding: 20px;
-    }
+        .edu-item {
+            background-color: white; /* bg-white */
+            padding: 1.5rem; /* p-6 */
+            border-left: 0.5rem solid; /* border-l-8 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* transition-all duration-300 ease-in-out */
+            cursor: pointer;
+        }
 
+        .edu-item:hover {
+            transform: translateY(-0.1rem); /* hover:scale-[1.01] */
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15); /* hover:shadow-xl */
+        }
+        
+        .edu-item.active {
+            background-color: #FFB6C1; /* active:bg-[#FFB6C1] - pastel pink */
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15); /* active:shadow-2xl */
+            transform: translateY(-0.25rem); /* active:scale-[1.01] */
+        }
 
-    @media (max-width: 600px) {
-      .education-header {
-        font-size: 32px;
-      }
+        /* Specific border colors for education items */
+        .edu-item:nth-child(1) { border-left-color: #8ecae6; } /* Pastel blue */
+        .edu-item:nth-child(2) { border-left-color: #A5D0A5; } /* Pastel green */
+        .edu-item:nth-child(3) { border-left-color: #FFDAB9; } /* Pastel peach */
+        
+        .edu-item h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            color: #4A5568; /* text-gray-700 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
 
-      .edu-item h3 {
-        font-size: 20px;
-      }
-    }
-  </style>
+        .edu-item p {
+            color: #4A5568; /* text-gray-600 */
+            line-height: 1.625; /* leading-relaxed */
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #DDEBF1; /* Soft gray-blue */
+            color: #4A5568; /* text-gray-700 */
+            padding: 1.5rem; /* p-6 */
+            text-align: center;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-inner */
+        }
+
+        footer p {
+            font-size: 1rem; /* text-md */
+        }
+
+        footer a {
+            color: #8ecae6; /* Pastel blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: #219ebc; /* Darker blue on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) { /* md breakpoint */
+            .education-section h1 {
+                font-size: 3rem; /* md:text-5xl */
+            }
+            .edu-item h3 {
+                font-size: 1.25rem; /* md:text-xl */
+            }
+        }
+
+        @media (max-width: 640px) { /* Small screens / Mobile */
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .education-section h1 {
+                font-size: 2rem;
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+            .edu-item {
+                padding: 1rem;
+            }
+            .edu-item h3 {
+                font-size: 1.125rem;
+            }
+            .edu-item p {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">Phanisri</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Header/Navigation Bar - Consistent with Home and About Pages -->
+    <header>
+        <div class="text-2xl">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="education-section">
-    <h1 class="education-header">My Education</h1>
+    <!-- Education Section -->
+    <section class="education-section">
+        <div>
+            <h1>My Education</h1>
 
-    <div class="edu-item" onclick="highlight(this)">
-      <h3>B.Tech in Computer Science & Engineering</h3>
-      <p>Amrita Vishwa Vidyapeetham, Amritapuri<br>
-        Expected Graduation: 2028<br>
-        CGPA: 8.45 (Current)</p>
-    </div>
+            <div class="edu-item-container">
+                <!-- B.Tech Item -->
+                <div class="edu-item" onclick="highlight(this)">
+                    <h3>B.Tech in Computer Science & Engineering</h3>
+                    <p>
+                        Amrita Vishwa Vidyapeetham, Amritapuri<br>
+                        Expected Graduation: 2028<br>
+                        CGPA: 8.45 (Current)
+                    </p>
+                </div>
 
-    <div class="edu-item" onclick="highlight(this)">
-      <h3>Intermediate (MPC Stream)</h3>
-      <p>Sarada educational institution, Vijayawada<br>
-        Year: 2022-2024<br>
-        Percentage: 95.4%</p>
-    </div>
+                <!-- Intermediate Item -->
+                <div class="edu-item" onclick="highlight(this)">
+                    <h3>Intermediate (MPC Stream)</h3>
+                    <p>
+                        Sarada educational institution, Vijayawada<br>
+                        Year: 2022-2024<br>
+                        Percentage: 95.4%
+                    </p>
+                </div>
 
-    <div class="edu-item" onclick="highlight(this)">
-      <h3>Schooling (SSC)</h3>
-      <p>Viveka High School, Andhra Pradesh<br>
-        Year: 2022<br>
-        GPA: 98.6%</p>
-    </div>
-  </section>
+                <!-- Schooling Item -->
+                <div class="edu-item" onclick="highlight(this)">
+                    <h3>Schooling (SSC)</h3>
+                    <p>
+                        Viveka High School, Andhra Pradesh<br>
+                        Year: 2022<br>
+                        GPA: 98.6%
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    function highlight(selected) {
-      const allItems = document.querySelectorAll('.edu-item');
-      allItems.forEach(item => item.classList.remove('active'));
-      selected.classList.add('active');
-    }
-  </script>
-   <footer>
-    <p>© 2025 Yemineni Phanisri | 
-      <a href="about.html">About Me</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
-    </p>
-  </footer>
+    <!-- JavaScript for highlighting -->
+    <script>
+        function highlight(selected) {
+            // Remove 'active' class from all items and reset their background/shadow
+            const allItems = document.querySelectorAll('.edu-item');
+            allItems.forEach(item => {
+                item.classList.remove('active');
+                item.style.backgroundColor = 'white'; /* Reset to default */
+                item.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'; /* Reset to default */
+                item.style.transform = 'translateY(0)'; /* Reset transform */
+            });
+
+            // Add 'active' class and specific styling to the selected item
+            selected.classList.add('active');
+            selected.style.backgroundColor = '#FFB6C1'; /* Apply pastel pink for active state */
+            selected.style.boxShadow = '0 15px 20px rgba(0, 0, 0, 0.15)'; /* Enhanced shadow for active */
+            selected.style.transform = 'translateY(-0.25rem)'; /* Slight lift for active */
+        }
+    </script>
+
+    <!-- Footer Section - Consistent with Home and About Pages -->
+    <footer>
+        <p>© 2025 Yemineni Phanisri | 
+            <a href="about.html">About Me</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
+        </p>
+    </footer>
 
 </body>
 </html>
