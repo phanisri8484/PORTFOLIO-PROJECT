@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yemineni Phanisri | Portfolio</title>
-    <!-- Google Fonts: Inter for a clean, modern look -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base styles */
+        
         * {
             margin: 0;
             padding: 0;
@@ -17,36 +17,36 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #E0F2F7; /* Light pastel blue */
-            color: #2D3748; /* Dark gray for text */
+            background-color: #E0F2F7; 
+            color: #2D3748;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            -webkit-font-smoothing: antialiased; /* For smoother fonts */
+            -webkit-font-smoothing: antialiased; 
             -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden; /* Prevent horizontal scroll on some animations */
+            overflow-x: hidden; 
         }
 
-        /* Custom scrollbar styles */
+        
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Light pastel background */
+            background: #f1f1f1; 
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #a7d9eb; /* Soft blue */
+            background: #a7d9eb; 
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #8ecae6; /* Slightly darker blue on hover */
+            background: #8ecae6; 
         }
 
-        /* Header/Navigation Bar */
+        
         header {
-            background-color: #A7D9EB; /* Soft blue */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #A7D9EB; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -66,31 +66,30 @@
         }
 
         header .logo {
-            font-size: 1.5rem; /* text-2xl */
+            font-size: 1.5rem; 
             font-weight: bold;
-            color: #4A5568; /* text-gray-700 */
+            color: #4A5568; 
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem; /* space-x-6 */
+            gap: 1.5rem; 
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #4A5568; /* text-gray-700 */
+            color: #4A5568; 
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #FFB6C1; /* pastel pink */
+            color: #FFB6C1; 
         }
 
-        /* Main Hero Section */
         .main {
-            min-height: calc(100vh - 80px); /* Adjust for header height */
+            min-height: calc(100vh - 80px); 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -101,13 +100,13 @@
         }
 
         .main > div {
-            max-width: 48rem; /* max-w-3xl */
-            background-color: rgba(255, 255, 255, 0.8); /* bg-white bg-opacity-80 */
-            padding: 2.5rem; /* p-10 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-            opacity: 0; /* For fade-in animation */
-            animation: fadeInUp 1s ease-out forwards 0.5s; /* Delay after header */
+            max-width: 48rem; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 2.5rem; 
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+            opacity: 0; 
+            animation: fadeInUp 1s ease-out forwards 0.5s; 
         }
 
         @keyframes fadeInUp {
@@ -116,105 +115,105 @@
         }
 
         .main h1 {
-            font-size: 3rem; /* text-5xl */
-            font-weight: 800; /* font-extrabold */
-            color: #333333; /* Darker text */
-            margin-bottom: 1rem; /* mb-4 */
-            line-height: 1.25; /* leading-tight */
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: #333333; 
+            margin-bottom: 1rem; 
+            line-height: 1.25; 
         }
 
         .main h1 span {
-            color: #8ecae6; /* Soft blue */
+            color: #8ecae6; 
         }
 
         .main p {
-            font-size: 1.125rem; /* text-xl */
-            color: #4A5568; /* text-gray-700 */
-            line-height: 1.625; /* leading-relaxed */
-            margin-bottom: 2rem; /* mb-8 */
+            font-size: 1.125rem; 
+            color: #4A5568; 
+            line-height: 1.625; 
+            margin-bottom: 2rem; 
             margin-left: auto;
             margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
-            flex-direction: column; /* flex-col */
+            flex-direction: column; 
             justify-content: center;
-            gap: 1rem; /* gap-4 */
+            gap: 1rem; 
         }
 
         .contact-btn, .resume-btn {
-            padding: 0.75rem 2rem; /* px-8 py-3 */
-            border-radius: 9999px; /* rounded-full */
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* font-semibold */
+            padding: 0.75rem 2rem; 
+            border-radius: 9999px; 
+            font-size: 1.125rem;
+            font-weight: 600; 
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* transition duration-300 shadow-md */
+            transition: background-color 0.3s ease, transform 0.2s ease; 
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: inline-block; /* Ensure they respect margin-top/bottom */
-            text-align: center; /* Center text within button */
+            display: inline-block; 
+            text-align: center;
         }
 
         .contact-btn {
-            background-color: #FFDAB9; /* Soft peach */
-            color: #1A202C; /* text-gray-900 */
+            background-color: #FFDAB9; 
+            color: #1A202C; 
         }
 
         .contact-btn:hover {
-            background-color: #FFC999; /* Slightly darker peach */
-            transform: translateY(-2px); /* Slight lift */
+            background-color: #FFC999; 
+            transform: translateY(-2px); 
         }
 
         .resume-btn {
-            background-color: #C1E1C1; /* Soft green */
-            color: #1A202C; /* text-gray-900 */
+            background-color: #C1E1C1; 
+            color: #1A202C; 
         }
 
         .resume-btn:hover {
-            background-color: #A5D0A5; /* Slightly darker green */
-            transform: translateY(-2px); /* Slight lift */
+            background-color: #A5D0A5; 
+            transform: translateY(-2px); 
         }
 
 
-        /* Footer Section */
+        
         footer {
-            background-color: #DDEBF1; /* Soft gray-blue */
-            color: #4A5568; /* text-gray-700 */
-            padding: 1.5rem; /* p-6 */
+            background-color: #DDEBF1; 
+            color: #4A5568; 
+            padding: 1.5rem; 
             text-align: center;
             border-top-left-radius: 0.5rem;
             border-top-right-radius: 0.5rem;
-            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-inner */
+            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
         }
 
         footer p {
-            font-size: 1rem; /* text-md */
+            font-size: 1rem; 
         }
 
         footer a {
-            color: #8ecae6; /* Pastel blue */
+            color: #8ecae6; 
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
         }
 
         footer a:hover {
-            color: #219ebc; /* Darker blue on hover */
+            color: #219ebc; 
         }
 
-        /* Responsive adjustments */
-        @media (min-width: 640px) { /* sm breakpoint */
+        
+        @media (min-width: 640px) { 
             .cta-buttons {
-                flex-direction: row; /* sm:flex-row */
+                flex-direction: row; 
             }
         }
 
-        @media (min-width: 768px) { /* md breakpoint */
+        @media (min-width: 768px) { 
             .main h1 {
-                font-size: 3.75rem; /* md:text-6xl */
+                font-size: 3.75rem; 
             }
             .main p {
-                font-size: 1.25rem; /* md:text-2xl */
+                font-size: 1.25rem; 
             }
         }
 
@@ -230,10 +229,10 @@
                 margin-top: 10px;
             }
             .main h1 {
-                font-size: 2rem; /* Adjusted for smaller screens */
+                font-size: 2rem; 
             }
             .main p {
-                font-size: 1rem; /* Adjusted for smaller screens */
+                font-size: 1rem; 
             }
             .main > div {
                 padding: 1.5rem;
@@ -242,7 +241,7 @@
     </style>
 </head>
 <body>
-    <!-- Header/Navigation Bar -->
+   
     <header>
         <div class="logo">My Portfolio</div>
         <nav>
@@ -256,7 +255,7 @@
         </nav>
     </header>
 
-    <!-- Main Hero Section -->
+    
     <section class="main">
         <div>
             <h1>Hi, I'm <span>Yemineni Phanisri</span></h1>
@@ -269,7 +268,7 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
+    
     <footer>
         <p>© 2025 Yemineni Phanisri | 
             <a href="about.html">About Me</a> |
