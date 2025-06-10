@@ -1,177 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yemineni Phanisri | Portfolio</title>
-  
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemineni Phanisri | Portfolio</title>
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: maroon;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0F2F7; /* Light pastel blue */
+            color: #2D3748; /* Dark gray for text */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased; /* For smoother fonts */
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll on some animations */
+        }
 
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Light pastel background */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7d9eb; /* Soft blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8ecae6; /* Slightly darker blue on hover */
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
+        /* Header/Navigation Bar */
+        header {
+            background-color: #A7D9EB; /* Soft blue */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            opacity: 0; /* For header fade-in */
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    nav ul li a:hover {
-      color: orangered;
-    }
+        header .logo {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: bold;
+            color: #4A5568; /* text-gray-700 */
+        }
 
-    body {
-      
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: #f0f0f0;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem; /* space-x-6 */
+        }
 
-    .main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 100vh;
-      padding: 20px;
-    }
-  .contact-btn, .resume-btn {
-      background-color: maroon;
-      color: beige;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-right: 10px;
-      text-decoration: none;
-      display: inline-block;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #4A5568; /* text-gray-700 */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    .contact-btn:hover, .resume-btn:hover {
-      background-color: #be003b;
-    }
+        nav ul li a:hover {
+            color: #FFB6C1; /* pastel pink */
+        }
 
-    
+        /* Main Hero Section */
+        .main {
+            min-height: calc(100vh - 80px); /* Adjust for header height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            flex-grow: 1;
+        }
 
-    .main h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      color: maroon;
-    }
+        .main > div {
+            max-width: 48rem; /* max-w-3xl */
+            background-color: rgba(255, 255, 255, 0.8); /* bg-white bg-opacity-80 */
+            padding: 2.5rem; /* p-10 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            opacity: 0; /* For fade-in animation */
+            animation: fadeInUp 1s ease-out forwards 0.5s; /* Delay after header */
+        }
 
-    .main p {
-      font-size: 18px;
-      color: black;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-   
+        .main h1 {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #333333; /* Darker text */
+            margin-bottom: 1rem; /* mb-4 */
+            line-height: 1.25; /* leading-tight */
+        }
 
-    .cta-buttons a {
-      padding: 10px 25px;
-      background-color: orangered;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
+        .main h1 span {
+            color: #8ecae6; /* Soft blue */
+        }
 
-    .cta-buttons a:hover {
-      background-color: red;
-    }
+        .main p {
+            font-size: 1.125rem; /* text-xl */
+            color: #4A5568; /* text-gray-700 */
+            line-height: 1.625; /* leading-relaxed */
+            margin-bottom: 2rem; /* mb-8 */
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    footer {
-      background: maroon;
-      color: black;
-      text-align: center;
-      padding: 20px;
-    }
+        .cta-buttons {
+            display: flex;
+            flex-direction: column; /* flex-col */
+            justify-content: center;
+            gap: 1rem; /* gap-4 */
+        }
 
-    footer a {
-      color: orangered;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+        .contact-btn, .resume-btn {
+            padding: 0.75rem 2rem; /* px-8 py-3 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* transition duration-300 shadow-md */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block; /* Ensure they respect margin-top/bottom */
+            text-align: center; /* Center text within button */
+        }
 
-    @media screen and (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
+        .contact-btn {
+            background-color: #FFDAB9; /* Soft peach */
+            color: #1A202C; /* text-gray-900 */
+        }
 
-      .main h1 {
-        font-size: 28px;
-      }
+        .contact-btn:hover {
+            background-color: #FFC999; /* Slightly darker peach */
+            transform: translateY(-2px); /* Slight lift */
+        }
 
-      .main p {
-        font-size: 16px;
-      }
-    }
-  </style>
+        .resume-btn {
+            background-color: #C1E1C1; /* Soft green */
+            color: #1A202C; /* text-gray-900 */
+        }
+
+        .resume-btn:hover {
+            background-color: #A5D0A5; /* Slightly darker green */
+            transform: translateY(-2px); /* Slight lift */
+        }
+
+
+        /* Footer Section */
+        footer {
+            background-color: #DDEBF1; /* Soft gray-blue */
+            color: #4A5568; /* text-gray-700 */
+            padding: 1.5rem; /* p-6 */
+            text-align: center;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-inner */
+        }
+
+        footer p {
+            font-size: 1rem; /* text-md */
+        }
+
+        footer a {
+            color: #8ecae6; /* Pastel blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: #219ebc; /* Darker blue on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 640px) { /* sm breakpoint */
+            .cta-buttons {
+                flex-direction: row; /* sm:flex-row */
+            }
+        }
+
+        @media (min-width: 768px) { /* md breakpoint */
+            .main h1 {
+                font-size: 3.75rem; /* md:text-6xl */
+            }
+            .main p {
+                font-size: 1.25rem; /* md:text-2xl */
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .main h1 {
+                font-size: 2rem; /* Adjusted for smaller screens */
+            }
+            .main p {
+                font-size: 1rem; /* Adjusted for smaller screens */
+            }
+            .main > div {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo"> Portfolio</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="Education.html">Education</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header/Navigation Bar -->
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="main">
-<div>
-        <h1>Hi, I'm Yemineni Phanisri</h1>
-    <p>I'm a Computer Science and Engineering student from Andhra Pradesh, deeply passionate about full stack web  development(front end and backend) and crafting seamless digital experiences. I specialize in building clean, responsive, and user-friendly websites using HTML, CSS, and JavaScript.</p><br>
-    
-  <a href="contact.html" class="contact-btn">Contact</a>
-  <a href="https://drive.google.com/file/d/1kMNkFnEaeBsiKBinPmPAUCfwm_CSZQ6Q/view?usp=drive_link" class="resume-btn" target="_blank">View Resume</a>
-</div>
-  </section>
+    <!-- Main Hero Section -->
+    <section class="main">
+        <div>
+            <h1>Hi, I'm <span>Yemineni Phanisri</span></h1>
+            <p>I'm a Computer Science and Engineering student from Andhra Pradesh, deeply passionate about full-stack web development (front end and backend) and crafting seamless digital experiences. I specialize in building clean, responsive, and user-friendly websites using HTML, CSS, and JavaScript.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="contact-btn">Contact</a>
+                <a href="image.png" class="resume-btn" target="_blank">View Resume</a>
 
-  <footer>
-    <p>© 2025 Yemineni Phanisri | 
-      <a href="about.html">About Me</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
-    </p>
-  </footer>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 Yemineni Phanisri | 
+            <a href="about.html">About Me</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
+        </p>
+    </footer>
 </body>
 </html>
