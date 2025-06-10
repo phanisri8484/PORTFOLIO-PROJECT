@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Yemineni Phanisri</title>
-    <!-- Google Fonts: Inter for a clean, modern look -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Base styles */
+        
         * {
             margin: 0;
             padding: 0;
@@ -17,76 +17,76 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #E0F2F7; /* Light pastel blue */
-            color: #2D3748; /* Dark gray for text */
+            background-color: #E0F2F7; 
+            color: #2D3748; 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            -webkit-font-smoothing: antialiased; /* For smoother fonts */
+            -webkit-font-smoothing: antialiased; 
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Custom scrollbar styles (consistent with previous versions) */
+        
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Light pastel background */
+            background: #f1f1f1; 
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #a7d9eb; /* Soft blue */
+            background: #a7d9eb; 
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #8ecae6; /* Slightly darker blue on hover */
+            background: #8ecae6; 
         }
 
-        /* Header/Navigation Bar */
+        
         header {
-            background-color: #A7D9EB; /* Soft blue */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            padding: 20px; /* p-5 */
+            background-color: #A7D9EB; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            padding: 20px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 50;
-            border-bottom-left-radius: 0.5rem; /* rounded-b-lg */
-            border-bottom-right-radius: 0.5rem; /* rounded-b-lg */
+            border-bottom-left-radius: 0.5rem; 
+            border-bottom-right-radius: 0.5rem; 
         }
 
         header .text-2xl {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: bold; /* font-bold */
-            color: #4A5568; /* text-gray-700 */
+            font-size: 1.5rem; 
+            font-weight: bold;
+            color: #4A5568; 
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem; /* space-x-6 */
-            color: #4A5568; /* text-gray-700 */
-            font-weight: 500; /* font-medium */
+            gap: 1.5rem; 
+            color: #4A5568; 
+            font-weight: 500; 
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #4A5568; /* text-gray-700 */
-            font-weight: 500; /* font-medium */
-            transition: color 0.3s ease; /* transition duration-300 */
+            color: #4A5568; 
+            font-weight: 500; 
+            transition: color 0.3s ease; 
         }
 
         nav ul li a:hover {
-            color: #FFB6C1; /* hover:text-[#FFB6C1] */
+            color: #FFB6C1; 
         }
 
-        /* Main Projects Section */
+        
         main {
-            flex-grow: 1; /* flex-grow */
-            padding: 4rem 1rem; /* py-16 px-4 */
-            opacity: 0; /* For fade-in animation for the whole main section */
+            flex-grow: 1; 
+            padding: 4rem 1rem; 
+            opacity: 0; 
             animation: fadeIn 1s ease-out forwards;
         }
 
@@ -97,33 +97,33 @@
 
         main h1 {
             text-align: center;
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 800; /* font-extrabold */
-            margin-bottom: 3rem; /* mb-12 */
-            color: #333333; /* text-[#333333] */
+            font-size: 2.25rem; 
+            font-weight: 800; 
+            margin-bottom: 3rem;
+            color: #333333;
         }
 
         .projects-wrapper {
-            max-width: 72rem; /* This max-width applies broadly */
+            max-width: 72rem; 
             margin-left: auto;
-            margin-right: auto; /* Centers the wrapper itself */
+            margin-right: auto; 
             display: grid;
-            grid-template-columns: 1fr; /* Default: one column for small screens */
+            grid-template-columns: 1fr; 
             gap: 2rem;
-            justify-content: center; /* Crucial for centering grid items */
+            justify-content: center; 
         }
 
-        /* Project Box Styling */
+        
         .project-box {
-            background-color: white; /* bg-white */
-            padding: 1.5rem; /* p-6 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            background-color: white; 
+            padding: 1.5rem; 
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* transition-all duration-300 ease-in-out */
-            opacity: 0; /* Hidden initially for JS animation */
-            transform: translateY(20px); /* Slightly down initially for JS animation */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            opacity: 0; 
+            transform: translateY(20px); 
         }
 
         .project-box.is-visible {
@@ -133,109 +133,107 @@
         }
 
         .project-box:hover {
-            transform: translateY(-0.25rem) scale(1.02); /* hover:scale-[1.02] */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-xl */
+            transform: translateY(-0.25rem) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
         }
 
         .project-box img {
-            width: 100%; /* w-full */
-            height: 12rem; /* h-48 */
-            object-fit: cover; /* object-cover */
-            border-radius: 0.5rem; /* rounded-lg */
-            margin-bottom: 1rem; /* mb-4 */
+            width: 100%; 
+            height: 12rem; 
+            object-fit: cover; 
+            border-radius: 0.5rem; 
+            margin-bottom: 1rem; 
         }
 
         .project-box h3 {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            color: #4A5568; /* text-gray-700 */
-            margin-bottom: 0.5rem; /* mb-2 */
+            font-size: 1.25rem; 
+            font-weight: 600; 
+            color: #4A5568; 
+            margin-bottom: 0.5rem; 
         }
 
         .project-box p {
-            font-size: 1rem; /* text-base */
-            color: #4A5568; /* text-gray-600 */
-            line-height: 1.625; /* leading-relaxed */
-            margin-bottom: 1rem; /* mb-4 */
+            font-size: 1rem; 
+            color: #4A5568; 
+            line-height: 1.625; 
+            margin-bottom: 1rem; 
         }
 
         .project-box a {
-            margin-top: auto; /* mt-auto */
+            margin-top: auto; 
             text-decoration: none;
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* font-semibold */
-            transition: color 0.3s ease; /* transition duration-300 */
+            font-size: 1.125rem; 
+            font-weight: 600; 
+            transition: color 0.3s ease; 
         }
 
-        /* Specific link colors for project boxes */
-        .project-box:nth-child(1) a { /* EEE Project */
-            color: #8ecae6; /* Pastel blue */
+        
+        .project-box:nth-child(1) a { 
+            color: #8ecae6; 
         }
         .project-box:nth-child(1) a:hover {
-            color: #219ebc; /* Darker blue on hover */
+            color: #219ebc; 
         }
 
-        .project-box:nth-child(2) a { /* Portfolio Website */
-            color: #A5D0A5; /* Pastel green */
+        .project-box:nth-child(2) a { 
+            color: #A5D0A5; 
         }
         .project-box:nth-child(2) a:hover {
-            color: #7EB57E; /* Darker green on hover */
+            color: #7EB57E; 
         }
 
 
-        /* Footer Section (Consistent with other Portfolio Pages) */
+       
         footer {
-            background-color: #DDEBF1; /* Soft gray-blue */
-            color: #4A5568; /* text-gray-700 */
-            padding: 1.5rem; /* p-6 */
+            background-color: #DDEBF1; 
+            color: #4A5568; 
+            padding: 1.5rem; 
             text-align: center;
-            border-top-left-radius: 0.5rem; /* rounded-t-lg */
-            border-top-right-radius: 0.5rem; /* rounded-t-lg */
-            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-inner */
-            margin-top: auto; /* mt-auto */
+            border-top-left-radius: 0.5rem; 
+            border-top-right-radius: 0.5rem; 
+            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            margin-top: auto; 
         }
 
         footer p {
-            font-size: 1rem; /* text-md */
+            font-size: 1rem; 
         }
 
         footer a {
-            color: #8ecae6; /* Pastel blue */
+            color: #8ecae6; 
             text-decoration: none;
-            transition: color 0.3s ease; /* transition duration-300 */
-            font-weight: 500; /* font-medium */
+            transition: color 0.3s ease; 
+            font-weight: 500; 
         }
 
         footer a:hover {
-            color: #219ebc; /* Darker blue on hover */
+            color: #219ebc; 
         }
 
-        /* Responsive adjustments */
-        @media (min-width: 768px) { /* md breakpoint */
+        
+        @media (min-width: 768px) { 
             main h1 {
-                font-size: 3rem; /* md:text-5xl */
+                font-size: 3rem;
             }
             .projects-wrapper {
-                grid-template-columns: repeat(2, 1fr); /* Explicitly 2 columns on medium screens */
-                /* Adjust max-width to be more appropriate for 2 columns + gap to ensure tight centering */
-                max-width: calc(2 * 320px + 2rem + 2 * 1.5rem); /* Example: 2 * min-width + gap + 2 * project-box padding */
-                /* 2 * 320px (min width) + 32px (gap) + 2 * 24px (padding of boxes) = 640 + 32 + 48 = 720px */
-                max-width: 720px; /* A calculated width for two items plus their padding and gap */
+                grid-template-columns: repeat(2, 1fr); 
+                
+                max-width: calc(2 * 320px + 2rem + 2 * 1.5rem);
+                
+                max-width: 720px; 
             }
             .project-box h3 {
-                font-size: 1.5rem; /* md:text-2xl */
+                font-size: 1.5rem;
             }
         }
 
-        @media (min-width: 1024px) { /* lg breakpoint - if you were to add a 3rd project later */
+        @media (min-width: 1024px) { 
             .projects-wrapper {
-                /* If 3 projects, reset to a wider max-width or let it stretch */
-                /* grid-template-columns: repeat(3, 1fr); */
-                /* max-width: 72rem; */
+                
             }
         }
 
-        @media (max-width: 640px) { /* Small screens / Mobile */
+        @media (max-width: 640px) { 
             header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -256,7 +254,7 @@
 </head>
 <body class="bg-[#E0F2F7] text-gray-800 antialiased min-h-screen flex flex-col">
 
-    <!-- Header/Navigation Bar - Consistent with other Portfolio Pages -->
+   
     <header>
         <div class="text-2xl">My Portfolio</div>
         <nav>
@@ -270,12 +268,12 @@
         </nav>
     </header>
 
-    <!-- Projects Section -->
+    
     <main>
         <h1>My Projects</h1>
 
         <div class="projects-wrapper">
-            <!-- EEE Project Box -->
+            
             <div class="project-box">
                 <img src="https://placehold.co/400x200/A7D9EB/333333?text=EEE+Project" alt="EEE Project">
                 <h3>EEE Project</h3>
@@ -285,7 +283,7 @@
                 <a href="https://docs.google.com/document/d/1g7R2u4tmJmLYQcraelU_wNjnFmHXl-0k/edit?usp=sharing&ouid=118199999496133956328&rtpof=true&sd=true" target="_blank">View Project →</a>
             </div>
 
-            <!-- Responsive Portfolio Website Project Box -->
+           
             <div class="project-box">
                 <img src="https://placehold.co/400x200/FFDAB9/333333?text=Portfolio+Website" alt="Portfolio Website">
                 <h3>🌐 Responsive Portfolio Website</h3>
@@ -297,7 +295,7 @@
         </div>
     </main>
 
-    <!-- Footer Section - Consistent with other Portfolio Pages -->
+    
     <footer>
         <p>© 2025 Yemineni Phanisri | 
             <a href="about.html">About Me</a> |
