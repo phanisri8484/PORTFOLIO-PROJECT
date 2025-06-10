@@ -1,161 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects | Phanisri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Yemineni Phanisri</title>
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      
-      background-size: cover;
-      color: black;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0F2F7; /* Light pastel blue */
+            color: #2D3748; /* Dark gray for text */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased; /* For smoother fonts */
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-    nav {
-      background-color: black;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+        /* Custom scrollbar styles (consistent with previous versions) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Light pastel background */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7d9eb; /* Soft blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8ecae6; /* Slightly darker blue on hover */
+        }
 
-    nav .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
+        /* Header/Navigation Bar */
+        header {
+            background-color: #A7D9EB; /* Soft blue */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* p-5 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom-left-radius: 0.5rem; /* rounded-b-lg */
+            border-bottom-right-radius: 0.5rem; /* rounded-b-lg */
+        }
 
-    nav ul {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
+        header .text-2xl {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: bold; /* font-bold */
+            color: #4A5568; /* text-gray-700 */
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem; /* space-x-6 */
+            color: #4A5568; /* text-gray-700 */
+            font-weight: 500; /* font-medium */
+        }
 
-    nav ul li a:hover {
-      color: orange;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #4A5568; /* text-gray-700 */
+            font-weight: 500; /* font-medium */
+            transition: color 0.3s ease; /* transition duration-300 */
+        }
 
-    h1 {
-      text-align: center;
-      margin-top: 100px;
-      font-size: 36px;
-      color: blue;
-      text-shadow: 1px 1px 3px gray;
-      margin-bottom: 10px;
-    }
+        nav ul li a:hover {
+            color: #FFB6C1; /* hover:text-[#FFB6C1] */
+        }
 
-    .projects-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
+        /* Main Projects Section */
+        main {
+            flex-grow: 1; /* flex-grow */
+            padding: 4rem 1rem; /* py-16 px-4 */
+            opacity: 0; /* For fade-in animation for the whole main section */
+            animation: fadeIn 1s ease-out forwards;
+        }
 
-    .project-box {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 24px lightgray;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      transition: 0.3s ease;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .project-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 28px gray;
-    }
+        main h1 {
+            text-align: center;
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            margin-bottom: 3rem; /* mb-12 */
+            color: #333333; /* text-[#333333] */
+        }
 
-    .project-box h3 {
-      color: navy;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+        .projects-wrapper {
+            max-width: 72rem; /* This max-width applies broadly */
+            margin-left: auto;
+            margin-right: auto; /* Centers the wrapper itself */
+            display: grid;
+            grid-template-columns: 1fr; /* Default: one column for small screens */
+            gap: 2rem;
+            justify-content: center; /* Crucial for centering grid items */
+        }
 
-    .project-box p {
-      font-size: 0.95rem;
-      color: black;
-      margin-bottom: 15px;
-    }
+        /* Project Box Styling */
+        .project-box {
+            background-color: white; /* bg-white */
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* transition-all duration-300 ease-in-out */
+            opacity: 0; /* Hidden initially for JS animation */
+            transform: translateY(20px); /* Slightly down initially for JS animation */
+        }
 
-    .project-box a {
-      margin-top: auto;
-      text-decoration: none;
-      color: blue;
-      font-weight: bold;
-    }
+        .project-box.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
 
-    .project-box a:hover {
-      color: mediumseagreen;
-    }
+        .project-box:hover {
+            transform: translateY(-0.25rem) scale(1.02); /* hover:scale-[1.02] */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-xl */
+        }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        .project-box img {
+            width: 100%; /* w-full */
+            height: 12rem; /* h-48 */
+            object-fit: cover; /* object-cover */
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-bottom: 1rem; /* mb-4 */
+        }
 
-      nav ul {
-        flex-direction: column;
-        margin-top: 10px;
-      }
+        .project-box h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: #4A5568; /* text-gray-700 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
 
-      h1 {
-        font-size: 28px;
-      }
-    }
-  </style>
+        .project-box p {
+            font-size: 1rem; /* text-base */
+            color: #4A5568; /* text-gray-600 */
+            line-height: 1.625; /* leading-relaxed */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .project-box a {
+            margin-top: auto; /* mt-auto */
+            text-decoration: none;
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            transition: color 0.3s ease; /* transition duration-300 */
+        }
+
+        /* Specific link colors for project boxes */
+        .project-box:nth-child(1) a { /* EEE Project */
+            color: #8ecae6; /* Pastel blue */
+        }
+        .project-box:nth-child(1) a:hover {
+            color: #219ebc; /* Darker blue on hover */
+        }
+
+        .project-box:nth-child(2) a { /* Portfolio Website */
+            color: #A5D0A5; /* Pastel green */
+        }
+        .project-box:nth-child(2) a:hover {
+            color: #7EB57E; /* Darker green on hover */
+        }
+
+
+        /* Footer Section (Consistent with other Portfolio Pages) */
+        footer {
+            background-color: #DDEBF1; /* Soft gray-blue */
+            color: #4A5568; /* text-gray-700 */
+            padding: 1.5rem; /* p-6 */
+            text-align: center;
+            border-top-left-radius: 0.5rem; /* rounded-t-lg */
+            border-top-right-radius: 0.5rem; /* rounded-t-lg */
+            box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-inner */
+            margin-top: auto; /* mt-auto */
+        }
+
+        footer p {
+            font-size: 1rem; /* text-md */
+        }
+
+        footer a {
+            color: #8ecae6; /* Pastel blue */
+            text-decoration: none;
+            transition: color 0.3s ease; /* transition duration-300 */
+            font-weight: 500; /* font-medium */
+        }
+
+        footer a:hover {
+            color: #219ebc; /* Darker blue on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) { /* md breakpoint */
+            main h1 {
+                font-size: 3rem; /* md:text-5xl */
+            }
+            .projects-wrapper {
+                grid-template-columns: repeat(2, 1fr); /* Explicitly 2 columns on medium screens */
+                /* Adjust max-width to be more appropriate for 2 columns + gap to ensure tight centering */
+                max-width: calc(2 * 320px + 2rem + 2 * 1.5rem); /* Example: 2 * min-width + gap + 2 * project-box padding */
+                /* 2 * 320px (min width) + 32px (gap) + 2 * 24px (padding of boxes) = 640 + 32 + 48 = 720px */
+                max-width: 720px; /* A calculated width for two items plus their padding and gap */
+            }
+            .project-box h3 {
+                font-size: 1.5rem; /* md:text-2xl */
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg breakpoint - if you were to add a 3rd project later */
+            .projects-wrapper {
+                /* If 3 projects, reset to a wider max-width or let it stretch */
+                /* grid-template-columns: repeat(3, 1fr); */
+                /* max-width: 72rem; */
+            }
+        }
+
+        @media (max-width: 640px) { /* Small screens / Mobile */
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            main h1 {
+                font-size: 2.5rem;
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-[#E0F2F7] text-gray-800 antialiased min-h-screen flex flex-col">
 
-  <nav>
-    <div class="logo">Portfolio</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Header/Navigation Bar - Consistent with other Portfolio Pages -->
+    <header>
+        <div class="text-2xl">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <h1>My Projects</h1>
+    <!-- Projects Section -->
+    <main>
+        <h1>My Projects</h1>
 
-  <div class="projects-wrapper">
-    <div class="project-box">
-     
-      <img src="https://www.electroniclinic.com/wp-content/uploads/2020/07/ESP32-CAM-Connection-with-Arduino-Circuit-Diagram.jpg" alt="Project 2">
-      <p> EEE Project - <a href="https://docs.google.com/document/d/1g7R2u4tmJmLYQcraelU_wNjnFmHXl-0k/edit?usp=sharing&ouid=118199999496133956328&rtpof=true&sd=true">View project</a></p>
-    </div>
+        <div class="projects-wrapper">
+            <!-- EEE Project Box -->
+            <div class="project-box">
+                <img src="https://placehold.co/400x200/A7D9EB/333333?text=EEE+Project" alt="EEE Project">
+                <h3>EEE Project</h3>
+                <p>
+                    Details about the EEE project, its objectives, technologies used, and your contribution. This description should be concise and engaging.
+                </p>
+                <a href="https://docs.google.com/document/d/1g7R2u4tmJmLYQcraelU_wNjnFmHXl-0k/edit?usp=sharing&ouid=118199999496133956328&rtpof=true&sd=true" target="_blank">View Project →</a>
+            </div>
 
-    
+            <!-- Responsive Portfolio Website Project Box -->
+            <div class="project-box">
+                <img src="https://placehold.co/400x200/FFDAB9/333333?text=Portfolio+Website" alt="Portfolio Website">
+                <h3>🌐 Responsive Portfolio Website</h3>
+                <p>
+                    A clean and fully responsive personal portfolio built using HTML, CSS, and basic JavaScript, designed to showcase skills and other projects.
+                </p>
+                <a href="https://github.com/phanisri8484/your-portfolio-repo" target="_blank">View on GitHub →</a>
+            </div>
+        </div>
+    </main>
 
-    <div class="project-box">
-      <h3>🌐 Responsive Portfolio Website</h3>
-      <p>A clean and fully responsive personal portfolio built using only HTML and CSS, designed to showcase skills and projects.</p>
-      <a href="#">View on GitHub →</a>
-    </div>
+    <!-- Footer Section - Consistent with other Portfolio Pages -->
+    <footer>
+        <p>© 2025 Yemineni Phanisri | 
+            <a href="about.html">About Me</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="https://github.com/phanisri8484" target="_blank">GitHub</a>
+        </p>
+    </footer>
 
-  </div>
+    <script>
+        // JavaScript for scroll-reveal animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // element is 10% visible
+            };
 
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, observerOptions);
+
+            // Observe each project box for animation
+            document.querySelectorAll('.project-box').forEach(box => {
+                observer.observe(box);
+            });
+        });
+    </script>
 </body>
 </html>
